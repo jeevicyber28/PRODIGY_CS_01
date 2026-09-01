@@ -426,5 +426,8 @@ This project is designed to help beginners understand:
 * Input handling
 * Testing
 * Git and GitHub workflows
+## 📌 Project Highlights
+
+This project demonstrates the fundamentals of the Caesar Cipher algorithm, including encryption, decryption, modular arithmetic, and string processing.
 
 If you find this project useful, consider giving the repository a ⭐.
