@@ -1,445 +1,257 @@
-Caesar Cipher
+# 🔐 Caesar Cipher
 
-A simple and educational Python implementation of the Caesar Cipher encryption technique.
+A simple and educational **Python implementation of the Caesar Cipher encryption and decryption technique**.
 
+The project demonstrates fundamental programming concepts such as string manipulation, loops, conditional statements, character encoding, modular arithmetic, and command-line interaction.
 
+> ⚠️ **Educational Project:** Caesar Cipher is not secure for real-world data protection. It is included here only for learning basic cryptography concepts.
 
+---
 
+## ✨ Features
 
+* 🔒 Encrypt text using a custom shift value
+* 🔓 Decrypt encrypted messages
+* 🔢 Supports positive and negative shifts
+* 🔄 Supports shift values greater than 26
+* 🔠 Preserves uppercase and lowercase letters
+* 🔤 Supports English alphabet characters
+* ␠ Preserves spaces
+* 🔣 Preserves numbers and punctuation
+* 💻 Simple command-line interface
+* 📦 Uses only the Python standard library
+* 🧩 Separate encryption and decryption functions
 
+---
 
+## 🧠 What is Caesar Cipher?
 
+The **Caesar Cipher** is one of the oldest and simplest substitution ciphers.
 
+It encrypts a message by shifting each alphabetic character by a fixed number of positions.
 
+For example, with a shift of **3**:
 
+```text
+A → D
+B → E
+C → F
+```
 
+So:
 
+```text
+Hello World
+```
 
+becomes:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Overview
-
-The Caesar Cipher is one of the oldest and simplest substitution ciphers.
-
-It encrypts a message by shifting every alphabetic character by a fixed number of positions in the alphabet.
-
-For example, with a shift value of 3:
-
-Plain Text
-
-
-A becomes D
-B becomes E
-C becomes F
-
-
+```text
+Khoor Zruog
+```
 
 The same shift can be reversed to decrypt the message.
 
-This project provides a small command-line program written in Python.
+---
 
-It is intended for learning programming, text processing, and basic cryptography concepts.
+## ⚙️ How It Works
 
-Project Goals
+The English alphabet contains **26 letters**.
 
-This project was created to demonstrate the following concepts:
+For encryption:
 
-•
-Python functions.
+```text
+encrypted_position = (original_position + shift) % 26
+```
 
-•
-Loops and conditional statements.
+For decryption:
 
-•
-String processing.
+```text
+decrypted_position = (original_position - shift) % 26
+```
 
-•
-Character encoding with ord() and chr().
+The `% 26` operation keeps the character inside the alphabet.
 
-•
-Modular arithmetic.
+For example:
 
-•
-Command-line user input.
+```text
+X + 3 → A
+Y + 3 → B
+Z + 3 → C
+```
 
-•
-Basic encryption and decryption logic.
+The program also preserves the original letter case.
 
-•
-Case preservation.
+---
 
-•
-Handling of spaces and punctuation.
+## 🛠️ Technology Stack
 
-Features
+| Technology              | Purpose                        |
+| ----------------------- | ------------------------------ |
+| Python 3.8+             | Programming language           |
+| Python Standard Library | Character and input processing |
+| Git                     | Version control                |
+| GitHub                  | Source-code hosting            |
 
-The program includes the following features:
+---
 
-•
-Encrypts a plain-text message.
+## 📁 Project Structure
 
-•
-Decrypts an encrypted message.
-
-•
-Accepts positive shift values.
-
-•
-Supports negative shift values.
-
-•
-Supports shift values larger than 26.
-
-•
-Preserves uppercase letters.
-
-•
-Preserves lowercase letters.
-
-•
-Leaves spaces unchanged.
-
-•
-Leaves numbers unchanged.
-
-•
-Leaves punctuation unchanged.
-
-•
-Provides a simple interactive command-line interface.
-
-•
-Uses separate functions for encryption and decryption.
-
-•
-Requires no third-party Python packages.
-
-Important Security Notice
-
-This implementation is designed for education and experimentation.
-
-The Caesar Cipher is not secure for protecting passwords, personal information, API keys, financial data, or confidential files.
-
-There are only 26 possible shifts in the standard English alphabet.
-
-An attacker can try every possible shift very quickly.
-
-Do not use this program to protect real-world sensitive information.
-
-Use modern, peer-reviewed cryptographic libraries for real security applications.
-
-Technology Stack
-
-Technology
-Purpose
-Python
-Application programming language
-Standard library
-Character and input processing
-Git
-Version control
-GitHub
-Source-code hosting and collaboration
-
-
-
-
-Repository Structure
-
-Plain Text
-
-
+```text
 PRODIGY_CS_01/
+│
 ├── caesar_cipher.py
 ├── .gitignore
 ├── LICENSE
 └── README.md
+```
 
+---
 
+## 📋 Requirements
 
-Requirements
+* Python **3.8 or newer**
+* Git (optional, for cloning the repository)
+* No external Python packages are required
 
-You need Python 3.8 or a newer version.
+Check your Python version:
 
-No external packages are required to run the program.
-
-You can check whether Python is installed by running:
-
-Bash
-
-
+```bash
 python --version
+```
 
+On some systems:
 
-
-On some systems, use:
-
-Bash
-
-
+```bash
 python3 --version
+```
 
+---
 
+## 🚀 Installation
 
-Installation
+Clone the repository:
 
-Clone this repository using Git:
-
-Bash
-
-
+```bash
 git clone https://github.com/jeevicyber28/PRODIGY_CS_01.git
-
-
+```
 
 Move into the project directory:
 
-Bash
-
-
+```bash
 cd PRODIGY_CS_01
+```
 
+No additional dependencies are required.
 
+---
 
-The program is ready to run after cloning.
+## ▶️ Running the Program
 
-A virtual environment is optional because the project uses only the Python standard library.
+Run:
 
-Running the Program
-
-Run the script with the following command:
-
-Bash
-
-
+```bash
 python caesar_cipher.py
+```
 
+Or:
 
-
-On systems where Python 3 is available through python3, use:
-
-Bash
-
-
+```bash
 python3 caesar_cipher.py
+```
 
+The program will display an interactive menu where you can choose between encryption and decryption.
 
+---
 
-The program will display an interactive menu.
+## 🔒 Encryption Example
 
-You will be asked whether you want to encrypt or decrypt a message.
+Choose encryption:
 
-You will then enter the message and the shift value.
-
-Encrypting a Message
-
-Start the program:
-
-Bash
-
-
-python caesar_cipher.py
-
-
-
-Choose the encryption option:
-
-Plain Text
-
-
+```text
 Type 'e' to encrypt or 'd' to decrypt: e
+```
 
+Enter your message:
 
-
-Enter a message:
-
-Plain Text
-
-
+```text
 Enter your message: Hello World
+```
 
+Enter the shift:
 
-
-Enter a shift value:
-
-Plain Text
-
-
+```text
 Enter shift value: 3
+```
 
+Output:
 
-
-The output will be:
-
-Plain Text
-
-
+```text
 Encrypted message: Khoor Zruog
+```
 
+---
 
+## 🔓 Decryption Example
 
-Decrypting a Message
+Choose decryption:
 
-Run the program again:
-
-Bash
-
-
-python caesar_cipher.py
-
-
-
-Choose the decryption option:
-
-Plain Text
-
-
+```text
 Type 'e' to encrypt or 'd' to decrypt: d
-
-
+```
 
 Enter the encrypted message:
 
-Plain Text
-
-
+```text
 Enter your message: Khoor Zruog
+```
 
+Enter the shift:
 
-
-Enter the same shift value:
-
-Plain Text
-
-
+```text
 Enter shift value: 3
+```
 
+Output:
 
-
-The output will be:
-
-Plain Text
-
-
+```text
 Decrypted message: Hello World
+```
 
+---
 
+## 🔤 Character Handling
 
-How the Algorithm Works
+The program handles different types of characters without changing their intended format.
 
-The English alphabet contains 26 letters.
+### Letters
 
-The program assigns each letter a position using its character code.
+```text
+Hello → Khoor
+HELLO → KHOOR
+```
 
-For encryption, the shift value is added to the current character position.
+### Spaces and punctuation
 
-The modulo operator % 26 keeps the result inside the alphabet.
+```text
+Hello, World! → Khoor, Zruog!
+```
 
-The general encryption formula is:
+### Numbers
 
-Plain Text
+```text
+Hello 123 → Khoor 123
+```
 
+Non-alphabetic characters such as spaces, numbers, and punctuation remain unchanged.
 
-encrypted_position = (original_position + shift ) % 26
+---
 
+## 🧩 Using the Functions Directly
 
+The encryption and decryption functions can also be imported into another Python program:
 
-The decryption operation uses the opposite shift:
-
-Plain Text
-
-
-decrypted_position = (original_position - shift) % 26
-
-
-
-The implementation performs decryption by calling the encryption function with a negative shift.
-
-This avoids duplicating the character transformation logic.
-
-Handling Uppercase and Lowercase Letters
-
-Uppercase letters are processed using the range beginning at A.
-
-Lowercase letters are processed using the range beginning at a.
-
-This allows the program to preserve the original case of every letter.
-
-For example:
-
-Plain Text
-
-
-Hello becomes Khoor with a shift of 3.
-HELLO becomes KHOOR with a shift of 3.
-
-
-
-Handling Non-Alphabetic Characters
-
-Characters that are not alphabetic are copied without modification.
-
-This includes:
-
-•
-Spaces.
-
-•
-Numbers.
-
-•
-Periods.
-
-•
-Commas.
-
-•
-Exclamation marks.
-
-•
-Question marks.
-
-•
-Symbols.
-
-Example:
-
-Plain Text
-
-
-Hello, World! 123
-
-
-
-With a shift of 3, the result is:
-
-Plain Text
-
-
-Khoor, Zruog! 123
-
-
-
-Using the Functions Directly
-
-The functions can also be imported into another Python file:
-
-Python
-
-
+```python
 from caesar_cipher import caesar_encrypt, caesar_decrypt
 
 message = caesar_encrypt("Hello", 3)
@@ -447,212 +259,172 @@ print(message)
 
 original = caesar_decrypt(message, 3)
 print(original)
+```
 
+Output:
 
-
-Expected output:
-
-Plain Text
-
-
+```text
 Khoor
 Hello
+```
 
+---
 
+## 🧪 Example Test Cases
 
-Error Handling
+The following cases can be used to test the implementation:
 
-The interactive program expects the shift value to be an integer.
-
-For example, this is valid:
-
-Plain Text
-
-
-Enter shift value: 5
-
-
-
-This is not valid:
-
-Plain Text
-
-
-Enter shift value: three
-
-
-
-Future versions may add clearer validation for invalid input values.
-
-Testing Ideas
-
-The following cases should be tested when improving the project:
-
-•
-Encrypt a normal lowercase message.
-
-•
-Encrypt a normal uppercase message.
-
-•
-Encrypt a mixed-case message.
-
-•
-Decrypt an encrypted message.
-
-•
-Use a shift of zero.
-
-•
-Use a shift of 26.
-
-•
-Use a shift larger than 26.
-
-•
-Use a negative shift.
-
-•
-Process spaces and punctuation.
-
-•
-Process numbers.
-
-•
-Enter an invalid menu option.
-
-•
-Enter an invalid shift value.
-
-Example Test Cases
-
-Python
-
-
+```python
 assert caesar_encrypt("ABC", 3) == "DEF"
 assert caesar_encrypt("xyz", 3) == "abc"
 assert caesar_encrypt("Hello, World!", 3) == "Khoor, Zruog!"
 assert caesar_decrypt("Khoor", 3) == "Hello"
 assert caesar_encrypt("Python", 0) == "Python"
+```
 
+Recommended cases to test:
 
+* Lowercase text
+* Uppercase text
+* Mixed-case text
+* Empty strings
+* Shift value `0`
+* Shift value `26`
+* Shift values greater than `26`
+* Negative shift values
+* Spaces
+* Numbers
+* Punctuation
+* Invalid menu choices
+* Invalid shift values
 
-Limitations
+---
 
-The program supports the English alphabet only.
+## ⚠️ Security Notice
 
-It does not provide password protection.
+**Caesar Cipher should NOT be used for real-world security.**
 
-It does not use a secret key.
+There are only **26 possible shifts** in the standard English alphabet, making the cipher extremely easy to brute-force.
 
-It does not prevent brute-force attacks.
+Do not use this implementation to protect:
 
-It does not provide authentication.
+* Passwords
+* API keys
+* Financial information
+* Personal information
+* Confidential files
+* Authentication credentials
 
-It does not encrypt files or network traffic.
+For real security applications, use modern, peer-reviewed cryptographic algorithms and established cryptography libraries.
 
-It does not provide integrity checking.
+---
 
-It should not be used for production security.
+## 🚧 Limitations
 
-Possible Future Improvements
+* Supports the English alphabet only
+* Vulnerable to brute-force attacks
+* Does not use a secret cryptographic key
+* Does not provide authentication
+* Does not provide integrity protection
+* Not suitable for production security
+* Does not encrypt files or network traffic
 
-Potential improvements include:
+---
 
-•
-Add input validation for the shift value.
+## 🔮 Future Improvements
 
-•
-Add a menu loop for multiple operations.
+Possible improvements include:
 
-•
-Add unit tests using pytest.
+* [ ] Add stronger input validation
+* [ ] Add automated unit tests
+* [ ] Add a menu loop for multiple operations
+* [ ] Add a graphical user interface
+* [ ] Add command-line arguments using `argparse`
+* [ ] Add GitHub Actions for automated testing
+* [ ] Add support for custom alphabets
+* [ ] Add clearer error messages
+* [ ] Add more test cases
+* [ ] Improve user experience
 
-•
-Add a graphical user interface.
+---
 
-•
-Add file encryption and decryption for learning purposes.
-
-•
-Add support for custom alphabets.
-
-•
-Add support for Unicode text with clear documentation.
-
-•
-Add command-line arguments using argparse.
-
-•
-Add continuous integration with GitHub Actions.
-
-•
-Add examples for negative shifts.
-
-•
-Add a clearer error message for invalid choices.
-
-Contributing
+## 🤝 Contributing
 
 Contributions are welcome for educational improvements.
 
-Before making a change, create a separate branch:
+To contribute:
 
-Bash
-
-
+```bash
 git checkout -b improve-caesar-cipher
+```
 
+Make your changes, test them locally, and commit:
 
+```bash
+git add .
+git commit -m "Improve Caesar Cipher validation"
+```
 
-Make a focused change and test it locally.
+Push your branch:
 
-Use a clear commit message:
+```bash
+git push origin improve-caesar-cipher
+```
 
-Bash
+Then open a Pull Request on GitHub.
 
+---
 
-git commit -m "Add input validation for shift values"
+## 🛡️ Safe Development Practices
 
+* Never commit passwords or API keys
+* Never commit confidential information
+* Use synthetic data in examples and tests
+* Review changes before pushing
+* Keep commit messages clear and meaningful
+* Do not describe Caesar Cipher as secure encryption
 
+---
 
-Push the branch and open a Pull Request on GitHub.
+## 📄 License
 
-Please keep contributions respectful, focused, and related to the project.
+This project is licensed under the **MIT License**.
 
-Safe Development Practices
+See the [`LICENSE`](LICENSE) file for details.
 
-Do not commit passwords, API keys, private messages, or confidential data.
+---
 
-Do not describe the Caesar Cipher as secure encryption.
+## 👨‍💻 Author
 
-Use synthetic examples in documentation and tests.
+**Jeevicyber28**
 
-Review code changes before pushing them to GitHub.
+GitHub Repository:
 
-License
+https://github.com/jeevicyber28/PRODIGY_CS_01
 
-This project is licensed under the MIT License.
+---
 
-See the LICENSE file for the complete license text.
+## 🙏 Acknowledgements
 
-Author
+This project is based on the classical **Caesar Cipher**, traditionally associated with Julius Caesar.
 
-Developed as an educational cybersecurity and Python programming project.
+It is implemented here for educational purposes to demonstrate basic cryptography and programming concepts.
 
-Repository: jeevicyber28/PRODIGY_CS_01
+---
 
-Acknowledgements
+## ⭐ Final Note
 
-This project is based on the classical Caesar Cipher technique traditionally associated with Julius Caesar.
+This project is designed to help beginners understand:
 
-It is included here for educational purposes and should not be considered a modern cryptographic system.
+* Basic cryptography
+* String manipulation
+* Functions
+* Loops
+* Conditional statements
+* Character encoding
+* Modular arithmetic
+* Input handling
+* Testing
+* Git and GitHub workflows
 
-Final Notes
-
-The main purpose of this project is to understand how a basic substitution cipher works.
-
-It also demonstrates how a small Python program can be documented, tested, version-controlled, and shared through GitHub.
-
-If you improve this project, update the README so other learners can understand the new behavior.
-
+If you find this project useful, consider giving the repository a ⭐.
